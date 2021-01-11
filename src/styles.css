@@ -1,0 +1,15 @@
+body {
+  font-family: 'Courier New', Courier, monospace;
+  background-color: lightgray;
+}
+
+img {
+  width: 200px;
+}
+
+p {
+  font-weight: 800;
+}
+span {
+  font-weight: 400;
+}
