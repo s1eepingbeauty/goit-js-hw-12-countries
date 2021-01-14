@@ -9,16 +9,24 @@ const refs = {
 
 function updateMarkup(countrie) {
   let markup = '';
-  if (countrie.length === 1) {
-    markup = countrieTpl(countrie[0]);
-  } else if (countrie.length <= 10) {
-    markup = countrie.map(({ name }) => `<p>- ${name}</p>`).join('');
-  } else {
+  if (countrie.status != '404'){
+    if (countrie.length === 1) {
+      markup = countrieTpl(countrie[0]);
+    } else if (countrie.length <= 10) {
+      markup = countrie.map(({ name }) => `<p>- ${name}</p>`).join('');
+    } else {
+      error({
+        title: 'Too many matches found. Please enter a more specific query!',
+        hide: true,
+        delay: 3000,
+      });
+    }
+  } else{
     error({
-      title: 'Too many matches found. Please enter a more specific query!',
-      hide: true,
-      delay: 3000,
-    });
+        title: 'Countrie not found!',
+        hide: true,
+        delay: 3000,
+      });
   }
   refs.countrieContainer.insertAdjacentHTML('beforeend', markup);
 }
