@@ -4,11 +4,11 @@ import { debounce } from 'lodash';
 import updateMarkup from './js/updateMarkup';
 
 const refs = {
-  searchCountrie: document.querySelector('.js-search'),
-  countrieContainer: document.querySelector('.js-countrie'),
+  searchCountry: document.querySelector('.js-search'),
+  countryContainer: document.querySelector('.js-country'),
 };
 
-refs.searchCountrie.addEventListener(
+refs.searchCountry.addEventListener(
   'input',
   _.debounce(event => {
     const value = event.target.value;
@@ -22,5 +22,5 @@ refs.searchCountrie.addEventListener(
 );
 
 function updateScreen() {
-  refs.countrieContainer.innerHTML = '';
+  refs.countryContainer.innerHTML = '';
 }
